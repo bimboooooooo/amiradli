@@ -14,7 +14,7 @@ class Image extends Model
 
     public function setAltAttribute($value)
     {
-        $this->attributes['alt'] = $value ?? $this->attributes['title'];
+        $this->attributes['alt'] = $value ?? $this->title;
     }
 
     public function imageable()

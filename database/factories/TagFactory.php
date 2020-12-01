@@ -24,8 +24,6 @@ class TagFactory extends Factory
     {
         return [
             'title' => $this->faker->word,
-//            'post_id' => Post::all()->random()->id,
-        'post_id' => rand(1,2000),
         ];
     }
 }

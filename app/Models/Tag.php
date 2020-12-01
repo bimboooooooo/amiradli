@@ -12,8 +12,9 @@ class Tag extends Model
 
     protected $guarded = [];
 
-    public function setSlugAttribute($value)
+    public function setTitleAttribute($value)
     {
+        $this->attributes['title'] = $value;
         $this->attributes['slug'] = Str::slug($this->attributes['title']);
     }
 

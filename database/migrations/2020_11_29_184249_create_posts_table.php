@@ -18,10 +18,10 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(\App\Models\Tag::class);
-            $table->foreignIdFor(\App\Models\Category::class);
+            $table->string('slug');
+            $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 

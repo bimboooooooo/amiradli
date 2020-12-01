@@ -28,8 +28,6 @@ class PostFactory extends Factory
             'title' => $this->faker->title,
             'content' => $this->faker->text,
             'user_id' => User::all()->random()->id,
-            'tag_id' => Tag::all()->random()->id,
-            'category_id' => Category::all()->random()->id,
         ];
     }
 }

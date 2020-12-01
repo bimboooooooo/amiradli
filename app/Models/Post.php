@@ -9,17 +9,18 @@ use Illuminate\Support\Str;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = [];
 
-    public function author()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function setSlugAttribute($value)
+    public function setTitleAttribute($value)
     {
+        $this->attributes['title'] = $value;
         $this->attributes['slug'] = Str::slug($this->attributes['title']);
     }
 

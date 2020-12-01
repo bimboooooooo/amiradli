@@ -18,12 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         User::factory(20)->create();
-         Category::factory(50)->create();
-         Tag::factory(100)->create();
-         Post::factory(2000)->create();
-         Image::factory(rand(2025,2050))->create();
-//        (new PostTagSeeder())->run();
-//        (new CategoryPostSeeder())->run();
+        (new UserSeeder())->run();
+        (new CategorySeeder())->run();
+        (new TagSeeder())->run();
+        (new PostSeeder())->run();
+        (new ImageSeeder())->run();
     }
 }
