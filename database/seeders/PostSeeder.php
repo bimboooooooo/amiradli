@@ -20,7 +20,7 @@ class PostSeeder extends Seeder
         $categories = Category::all();
         $tags = Tag::all();
         $images = Image::all();
-        Post::factory()->count(20)->create()
+        Post::factory()->count(2000)->create()
             ->each(function ($post) use ($categories, $images, $tags) {
                 $post->categories()->attach($categories->random(rand(1, 5)));
                 $post->tags()->attach($tags->random(rand(3, 10)));
