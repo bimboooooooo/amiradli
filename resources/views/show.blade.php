@@ -21,7 +21,7 @@
 </head>
 <body>
 <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{$post->image->path}}" alt="Card image cap">
+    <img class="card-img-top" src="{{\Illuminate\Support\Facades\Storage::url($post->image->path)}}" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">{{$post->title}}</h5>
         <p class="card-text">{{$post->content}}</p>
