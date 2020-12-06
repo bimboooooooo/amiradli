@@ -65,6 +65,13 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'uploads' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/'.env('UPLOAD_FOLDER')),
+            'url' => env('APP_URL').'/storage/'.env('UPLOAD_FOLDER'),
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*

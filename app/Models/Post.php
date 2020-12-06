@@ -13,15 +13,17 @@ class Post extends Model
 
     protected $guarded = [];
 
-    public function user()
+    protected $with = ['author','tags','categories','image'];
+
+    public function author()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
     }
 
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = $value;
-        $this->attributes['slug'] = Str::slug($this->attributes['title']);
+        $this->attributes['slug'] = Str::slug(rand(100000,999999) . ' ' . $this->attributes['title']);
     }
 
     public function tags()

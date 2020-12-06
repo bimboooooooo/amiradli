@@ -38,7 +38,7 @@
             <th scope="row">{{$post->id}}</th>
             <td>{{$post->title}}</td>
             <td>{{$post->slug}}</td>
-            <td>{{$post->user->name}}</td>
+            <td>{{$post->author->name}}</td>
             <td>
                 <table>
                     @foreach($post->categories as $category)

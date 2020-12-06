@@ -28,7 +28,7 @@
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">Slug: {{$post->slug}}</li>
-        <li class="list-group-item">Author: {{$post->user->name}}</li>
+        <li class="list-group-item">Author: {{$post->author->name}}</li>
         <li class="list-group-item">Categories:
             <table>
                 <tr>

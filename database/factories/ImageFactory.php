@@ -5,6 +5,8 @@ namespace Database\Factories;
 use App\Models\Image;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+use voku\helper\ASCII;
 
 class ImageFactory extends Factory
 {
@@ -29,9 +31,9 @@ class ImageFactory extends Factory
         return [
             'title' => $this->faker->word,
             'alt' => $this->faker->sentence,
-            'path' => $this->faker->image( 'storage/public/images'),
-            'imageable_id' => rand(1,2050),
-            'imageable_type' => $arr[rand(0,1)],
+            'path' => $this->faker->image( 'storage/app/public/' . env('UPLOAD_FOLDER','uploads')),
+//            'imageable_id' => rand(1,2050),
+//            'imageable_type' => $arr[rand(0,1)],
         ];
     }
 }
